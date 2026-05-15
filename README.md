@@ -131,3 +131,7 @@ This project is licensed under the MIT License.
 - **Inspiration**: Walmart’s business case studies on sales and supply chain optimization.
 
 ---
+=======
+# walmart-sales-analysis-sql-python
+End-to-end Walmart sales analysis project using SQL, Python, Pandas, and data visualization to generate business insights.
+
