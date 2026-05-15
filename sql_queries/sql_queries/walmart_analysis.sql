@@ -137,60 +137,19 @@ ORDER BY Branch, invoice_count;
 -- comparing 2022 vs 2023
 -- =========================================
 
+WITH revenue_data AS (
+    SELECT
+        Branch, YEAR(STR_TO_DATE(date, '%d/%m/%Y')) AS year, total
+    FROM Walmart
+)
 SELECT
     Branch,
-
-    SUM(
-        CASE
-            WHEN YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2022
-            THEN total
-            ELSE 0
-        END
-    ) AS last_year_revenue,
-
-    SUM(
-        CASE
-            WHEN YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2023
-            THEN total
-            ELSE 0
-        END
-    ) AS current_year_revenue,
-
-    ROUND(
-        (
-            (
-                SUM(
-                    CASE
-                        WHEN YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2022
-                        THEN total
-                        ELSE 0
-                    END
-                )
-                -
-                SUM(
-                    CASE
-                        WHEN YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2023
-                        THEN total
-                        ELSE 0
-                    END
-                )
-            )
-            /
-            SUM(
-                CASE
-                    WHEN YEAR(STR_TO_DATE(date, '%d/%m/%Y')) = 2022
-                    THEN total
-                    ELSE 0
-                END
-            )
-        ) * 100,
-        2
-    ) AS revenue_decrease_ratio
-
-FROM Walmart
-
+    SUM(CASE WHEN year = 2022 THEN total ELSE 0 END)
+        AS last_year_revenue,
+    SUM(CASE WHEN year = 2023 THEN total ELSE 0 END)
+        AS current_year_revenue,
+    ROUND(( SUM(CASE WHEN year = 2022 THEN total ELSE 0 END) - SUM(CASE WHEN year = 2023 THEN total ELSE 0 END)) / SUM(CASE WHEN year = 2022 THEN total ELSE 0 END)* 100,2) AS revenue_decrease_ratio
+FROM revenue_data
 GROUP BY Branch
-
 ORDER BY revenue_decrease_ratio DESC
-
 LIMIT 5;
