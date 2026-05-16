@@ -110,6 +110,70 @@ This section will include your analysis findings:
 - **Profitability**: Insights into the most profitable product categories and locations.
 - **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
 
+## Business Problem 1
+### Find different payment method and number of transactions, number of quantity sold
+
+![Business Problem 1](screenshots/Business_problem_1.png)
+
+---
+
+## Business Problem 2
+### Identify the Highest-rated category in each branch, displaying the branch, category
+### AVG RATING
+![Business Problem 2](screenshots/Business_problem_2.png)
+
+---
+
+## Business Problem 3
+### Identify the busiest day for each branch based on the number of transactions
+
+![Business Problem 3](screenshots/Business_problem_3.png)
+
+---
+
+## Business Problem 4
+### Calculate the total quantity of items sold per payment method. list payment_method and total_quantity
+
+![Business Problem 4](screenshots/Business_problem_4.png)
+
+---
+
+## Business Problem 5
+### Determine the average, minimum, and maximum rating of category for each city
+### list the city, average_rating, min_rating, and  max_rating
+![Business Problem 5](screenshots/Business_problem_5.png)
+
+---
+
+## Business Problem 6
+### Calculate the total profit for each category by considering the total_profit as (unit_price* quqntity* profit_margin ) 
+### List category and total_profit, ordered from highest to lowest profit
+
+![Business Problem 6](screenshots/Business_problem_6.png)
+
+---
+
+## Business Problem 7
+### Determine the most common payment method for each branch. Display branch and preferred_payment_method
+
+![Business Problem 7](screenshots/Business_problem_7.png)
+
+---
+
+## Business Problem 8
+### Categorize sales into 3 group MORNING, AFTERNOON, EVENING
+### FIND OUT EACH OF THE SHIFT AND NUMBER OF INVOICES
+![Business Problem 8](screenshots/Business_problem_8.png)
+
+---
+
+## Business Problem 9
+### Identify the top 5 branches with the highest revenue decrease ratio
+### comparing 2022 vs 2023
+![Business Problem 9](screenshots/Business_problem_9.png)
+
+---
+
 ## Future Enhancements
 
 Possible extensions to this project:
